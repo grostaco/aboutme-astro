@@ -1,0 +1,93 @@
+---
+import { Image } from "astro:assets"
+// import Email from "./icons/Email.astro";
+import Github from "./icons/Github.astro";
+// import Twitter from "./icons/Twitter.astro";
+
+import "../styles/main.css"
+import avatar from "../assets/avatars/avatar.png"
+import ExternalLink from "./ExternalLink.astro";
+import Twitter from "./icons/Twitter.astro";
+import Email from "./icons/Email.astro";
+import Chess from "./icons/Chess.astro";
+---
+
+<div class="flex flex-col md:flex-row justify-between w-full gap-8">
+  <div class="flex flex-col gap-4 flex-grow-0 max-w-[44rem] text-xl leading-8">
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-900 mb-2">
+        Hi, I'm Gros.
+        </h1>
+
+        <div class="color-text-400 flex flex-col gap-4">
+        <p>
+            The idea of machine being able to learn has always been fascinating to me.
+            I am a machine learning enthusiast, specializing in NLP.
+        </p>
+        <p>
+            I've recently been dabbling in game modding, website creation, and real analysis.
+            I play chess and sandbox games.
+        </p>
+        <p>
+            If you found me from Discord, my DMs are open if you would like to chat. 
+            I am always open to opportunities to meet new people.
+        </p>
+
+        <p>
+            The majority of what you see here aren't mine, you can find the original website <a href="https://xetera.dev"><u>here</u></a>
+        </p>
+        </div>
+        <div class="flex flex-col gap-2">
+            <div class="flex gap-4 text-3xl color-text-700">
+                <ExternalLink
+                    noIcon
+                    href={`https://github.com/grostaco`}
+                    target="_blank"
+                    class="hover:color-text-900"
+                    >
+                    <Github />
+                </ExternalLink>
+                <ExternalLink
+                    noIcon
+                    href={`https://twitter.com/grostaco`}
+                    target="_blank"
+                    class="hover:color-text-900"
+                    >
+                    <Twitter />
+                </ExternalLink>
+                <ExternalLink
+                    noIcon
+                    href={"mailto:grostaco@gmail.com"}
+                    target="_blank"
+                    class="email-target hover:color-text-900 relative"
+                    >
+                    <Email />
+                </ExternalLink>
+                <ExternalLink
+                    noIcon
+                    href={"https://chess.com/member/londontilibeatkei"}
+                    target="_blank"
+                    class="email-target hover:color-text-900 relative"
+                    >
+                    <Chess />
+                </ExternalLink>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="relative w-full lg:max-w-[390px] max-w-[300px] aspect-ratio-1 flex-shrink-0 group relative h-min">
+            <span
+            class="rounded-md image-container -z-1 outline outline-1 outline-body-800"
+            ></span>
+            <Image
+            id="custom-avatar"
+            alt="Profile picture"
+            quality={100}
+            class="rounded-md z-2 outline outline-1 rounded outline-body-500 h-full bg-body-900"
+            src={avatar}
+            width={400}
+            height={400}
+            sizes=""
+            />
+    </div>
+</div>
